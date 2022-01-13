@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Salon Samochodowy chui</title>
+</head>
+<body>
+<div align="center">
+  <h1>SALON chui</h1>
+  <!-- Table -->
+  <table border = "1" cellpadding = "10"> <!-– border –
+    obramowanie, cellpadding – rozmiar komórki -->
+    <!-- Table header -->
+    <thead>
+    <tr> <!-- Table row -->
+      <th>ID</th> <!–- Table column -->
+      <th>Item Name</th>
+      <th>Quantity</th>
+      <th>Amount</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <!-- Table body -->
+    <tbody>
+    <tr th:each = "Modele : ${listModele}">
+      <td th:text = "${Modele.idModelu}">ID modelu</td>
+      <td th:text = "${Modele.idMarki}">ID marki</td>
+      <td th:text = "${Modele.kod}">kod</td>
+      <td th:text = "${Modele.opis}">opis</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
