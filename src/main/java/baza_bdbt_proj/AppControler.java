@@ -14,7 +14,7 @@ public class AppControler {
     @RequestMapping("/")
     public String viewHomePage(Model model){
         List<Modele> listModele = dao.list();
-        model.addAttribute("listModel",listModele);
+        model.addAttribute("listModele",listModele);
         return "index";
 
     }
