@@ -20,8 +20,9 @@ public class ModeleDAO {
 
     /* Import java.util.List */
     public List<Modele> list(){
-        String sql = "SELECT * FROM MODELE";
+        String sql = "select * from modele";
         List<Modele> listModele = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Modele.class));
+
         return listModele;
     }
     /* Insert – wstawianie nowego wiersza do bazy */
