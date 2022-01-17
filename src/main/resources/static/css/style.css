@@ -373,7 +373,7 @@ button {
 
 .text-bg span {
      font-family: 'Righteous', cursive;
-     color: #f6d601;
+     color: #b00519;
      font-size: 40px;
      line-height: 50px;
      font-weight: bold;
@@ -402,7 +402,7 @@ button {
 }
 
 .text-bg a:hover {
-     background-color: #f6d601;
+     background-color: #b00519;
      color: #000;
      transition: ease-in all 0.5s;
      border-radius: 26px;
@@ -469,7 +469,7 @@ button {
 
 .car_box h3 {
      color: #0c0c0e;
-     background-color: #f6d601;
+     background-color: #b00519;
      font-size: 30px;
      line-height: 28px;
      height: 84px;
@@ -533,7 +533,7 @@ button {
 }
 
 .bestCar .main_form .find_btn:hover {
-     background-color: #f6d601;
+     background-color: #b00519;
      transition: ease-in all 0.5s;
      color: #000;
      border-radius: 26px;
