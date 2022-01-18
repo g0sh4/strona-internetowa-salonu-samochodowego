@@ -31,14 +31,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/log","/home", "/js/**", "/css/**","/img/**").permitAll() //log dodawanie
+                .antMatchers("/", "/main", "/js/**", "/css/**","/img/**").permitAll() //log dodawanie "/index",
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/index")
+                .loginPage("/login")
+                .defaultSuccessUrl("/main", true)
                 .permitAll()
                 .and()
                 .logout()
+                .logoutSuccessUrl("/index")
                 .permitAll();
     }
 }

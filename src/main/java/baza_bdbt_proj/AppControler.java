@@ -2,7 +2,6 @@ package baza_bdbt_proj;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +21,9 @@ public class AppControler  implements WebMvcConfigurer {
     }
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/log").setViewName("log");
-        registry.addViewController("/").setViewName("log");
-        registry.addViewController("/index").setViewName("index");
+        registry.addViewController("/index").setViewName("index");  //index z pdf to u nas log
+        registry.addViewController("/").setViewName("index");    //main z pdf to index u nas
+        registry.addViewController("/main").setViewName("main");
         registry.addViewController("/login").setViewName("login");
     }
 
