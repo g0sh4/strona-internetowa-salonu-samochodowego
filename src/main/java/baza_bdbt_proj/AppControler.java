@@ -19,6 +19,13 @@ public class AppControler  implements WebMvcConfigurer {
         return "index";
 
     }
+    @RequestMapping("/main")
+    public String addTableToMain(Model model){
+        List<Modele> listModele = dao.list();
+        model.addAttribute("listModele",listModele);
+        return "main";
+
+    }
 
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("index");  //index z pdf to u nas log
