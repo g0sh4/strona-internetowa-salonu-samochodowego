@@ -32,7 +32,7 @@ header{
     background-color:white;
 }
 .nav-menu li a:hover{
-    border:1px solid gray
+    border:1px solid gray;
     background-color: pink ;
 }
 
@@ -71,3 +71,9 @@ h1{
 background-color:rgba(117,114,114,0.2);
 
 }
+/* odwolywanie sie do zakladek*/
+div.items div:not(:target) {display: none}
+div.items div:target {display:block}
+
+div.items p:not(:target) {display: none}
+div.items p:target {display:block}
