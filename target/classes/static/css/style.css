@@ -28,33 +28,45 @@ header{
     font-size:20px;
 }
 .homebtn a {
-    border: 1px solid grey;
-    background-color:white;
+
+background: rgba(0, 0, 0, 0.55);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.1px);
+-webkit-backdrop-filter: blur(7.1px);
 }
 .nav-menu li a:hover{
-    border:1px solid gray;
-    background-color: pink ;
+    background: rgba(117,114,114,0.5) ;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(7.1px);
 }
 
 .tagline{
     position: absolute;
     width: 1200px;
     margin-left:30;
-    margin-top:0;
+    margin-top:20;
 }
 h1{
     color: white;
-    font-size:50px;
+    font-size:42px;
     font-family:"Verdana", "sans-serif";
     text-align:center;
-    margin-top:370px;
-    margin-left:300px;
+    margin-top:250px;
+    margin-left:270px;
+   background: rgba(255, 255, 255, 0);
+   border-radius: 16px;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(2px);
+   -webkit-backdrop-filter: blur(0px);
 
 
 }
 .check{
     margin-top:30px;
-    margin-left:650px;
+    margin-left:630px;
 }
 
 .bttn{
@@ -64,10 +76,14 @@ h1{
     font-family:"Tahoma", "sans-serif";
     font-size: 22px;
     text-decoration: none;
-    background-color:rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(7.1px);
 }
 
-.adopt a:hover{
+.check a:hover{
 background-color:rgba(117,114,114,0.2);
 
 }
