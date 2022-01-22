@@ -85,7 +85,6 @@ h1{
 
 .check a:hover{
 background-color:rgba(117,114,114,0.2);
-
 }
 /* odwolywanie sie do zakladek*/
 div.items div:not(:target) {display: none}
