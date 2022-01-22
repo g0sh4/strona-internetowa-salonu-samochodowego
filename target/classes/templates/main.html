@@ -24,7 +24,12 @@
             <li class="homebtn"> <a href="#home">Home</a> </li>
             <li> <a href="#baza1">baza1</a> </li>
             <li> <a href="#baza2">baza2</a> </li>
-            <li> <a href="/index">Log Out</a> </li>
+            <!--<li> <a href="/index" type="submit" >Log Out</a> </li>  -->
+            <!
+            <li><form class = "bttn" th:action="@{/logout}" method="post">
+                <input class = "bttn" type="submit" value="Sign Out"/>
+                </form>
+            </li>
         </ul>
     </div>
 
