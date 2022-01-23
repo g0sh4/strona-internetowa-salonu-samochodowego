@@ -72,7 +72,51 @@ h1{
    backdrop-filter: blur(2px);
    -webkit-backdrop-filter: blur(0px);
 
+}
+h2{
+    color: white;
+        font-size:42px;
+        font-family:"Verdana", "sans-serif";
+        text-align:center;
+        margin-top:250px;
+        margin-left:270px;
+       background: rgba(255, 255, 255, 0);
+       border-radius: 16px;
+       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+       backdrop-filter: blur(2px);
+       -webkit-backdrop-filter: blur(0px);
+}
+h3{
+        color: white;
+        font-size:20px;
+        font-family:"Verdana", "sans-serif";
+                margin-top:30px;
+                margin-left:0px;
+                text-align:left;
 
+}
+.spacer {
+  height: 10px;
+}
+h4{
+        color: white;
+        font-size:12px;
+        margin-left:340px;
+        font-family:"Verdana", "sans-serif";
+        text-align:left;
+        position:absolute;
+                margin-top:10px;
+
+                padding-left:25px;
+                padding-right: 50px;
+                padding-top: 0px;
+                padding-bottom: 25px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        box-shadow: 0 40px 30px rgba(0, 0, 0, 0.02);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 100px 100px rgba(255, 255, 255, 0.15);
 }
 .check{
     margin-top:30px;
@@ -96,6 +140,21 @@ h1{
 .check a:hover{
 background-color:rgba(117,114,114,0.2);
 }
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+
 /* odwolywanie sie do zakladek*/
 div.items div:not(:target) {display: none}
 div.items div:target {display:block}

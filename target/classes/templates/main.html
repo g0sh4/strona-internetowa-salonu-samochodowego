@@ -13,29 +13,48 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>McquinniMain</title>
+    <title>Mcquinni</title>
     <link rel="stylesheet" href = "css/style.css" >
 
 </head>
 <body>
+
 <header>
     <div class="top">
         <ul class="nav-menu">
-            <li class="homebtn"> <a href="#home">Home</a> </li>
+            <li class="homebtn"> <a href="#home">home</a> </li>
             <li> <a href="#baza1">baza1</a> </li>
             <li> <a href="#baza2">baza2</a> </li>
             <!--<li> <a href="/index" type="submit" >Log Out</a> </li>  -->
-            <!
-            <li><form class = "bttn" th:action="@{/logout}" method="post">
-                <input class = "bttn" type="submit" value="Sign Out"/>
+            <!-- tutaj najprawdopodobniej do poprawyyy -->
+            <li><form th:action="@{/logout}" method="post">
+                <input class = "bttn" type="submit" value="Wyloguj się"/>
                 </form>
             </li>
         </ul>
     </div>
-
+    <!--
+    <div class="container">
+        <div class="top-left"><p id="home"><h2>Jesteś zalogowany jako: [[${#httpServletRequest.remoteUser}]].</h2></p></div>
+    </div>
+    -->
     <div class="items">
-        <p id="home">Witaj [[${#httpServletRequest.remoteUser}]]!</p>
+            <div class="tagline" id="home">
+                <h2>Jesteś zalogowany jako: [[${#httpServletRequest.remoteUser}]].</h2>
+
+                <h4><ul>
+                    <h3> Posiadasz uprawnienia do:</h3>
+                    <br>
+                    <li>Danych o posiadanych w ofercie pojazdach z możliwością ich modyfikacji.</li>
+                    <li>Danych odnośnie pracowników z możliwością ich modyfikacji.</li>
+                    <li>Danych odnośnie klientów z możliwością ich modyfikacji.</li>
+                </ul></h4>
+
+
+            </div>
+
             <div id="baza1">
+
                 <!-- Table -->
                 <table border = "1" cellpadding = "10"> <!-– border –
                     obramowanie, cellpadding – rozmiar komórki -->
@@ -61,7 +80,8 @@
                 </table>
             </div>
         <p id="baza2">... item 2...</p>
-    </div>
+            </div>
+
 </header>
 
 </body>
