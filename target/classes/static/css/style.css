@@ -101,7 +101,7 @@ h3{
 h4{
         color: white;
         font-size:12px;
-        margin-left:340px;
+        margin-left:30%;
         font-family:"Verdana", "sans-serif";
         text-align:left;
         position:absolute;
@@ -255,6 +255,14 @@ h5 {
 /* When moving the mouse over the close button */
 .closebtn:hover {
   color: black;
+}
+.center {
+
+      margin-right: auto;
+      position:fixed; /* half of width */
+      margin-top:160px;  /* half of height */
+      margin-left:60px;
+
 }
 
 /* odwolywanie sie do zakladek*/
