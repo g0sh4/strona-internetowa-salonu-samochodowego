@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mcquinni</title>
+  <link rel="stylesheet" href = "css/style.css" >
+
+</head>
+<body>
+<header>
+  <div class="top">
+    <ul class="nav-menu">
+      <li class="homebtn"> <a href="#home">Home</a> </li>
+      <li> <a href="#baza1">baza1</a> </li>
+      <li> <a href="#baza2">baza2</a> </li>
+      <!--<li> <a href="/index" type="submit" >Log Out</a> </li>  -->
+      <!-- tutaj najprawdopodobniej do poprawyyy -->
+      <li><form class = "bttn" th:action="@{/logout}" method="post">
+        <input class = "bttn" type="submit" value="Sign Out"/>
+      </form>
+      </li>
+    </ul>
+  </div>
+
+  <div class="items">
+    <p id="home">Witaj [[${#httpServletRequest.remoteUser}]]!</p>
+    <div id="baza1">
+      <!-- Table -->
+      <table border = "1" cellpadding = "10"> <!-– border –
+        obramowanie, cellpadding – rozmiar komórki -->
+        <!-- Table header -->
+        <thead>
+        <tr> <!-- Table row -->
+          <th>ID modelu</th> <!–- Table column -->
+          <th>ID marki</th>
+          <th>kod</th>
+          <th>opis</th>
+
+        </tr>
+        </thead>
+        <!-- Table body -->
+        <tbody>
+        <tr th:each = "Modele : ${listModele}">
+          <td th:text = "${Modele.idModelu}">ID modelu</td>
+          <td th:text = "${Modele.idMarki}">ID marki</td>
+          <td th:text = "${Modele.kod}">kod</td>
+          <td th:text = "${Modele.opis}">opis</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p id="baza2">... item 2...</p>
+  </div>
+</header>
+
+</body>
+</html>

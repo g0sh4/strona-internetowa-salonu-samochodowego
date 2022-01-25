@@ -22,7 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("admin")
                 .password("admin")
-                .roles("ADMIN");
+                .roles("ADMIN","USER");
     }
     @Bean
     public PasswordEncoder getPasswordEncoder() { return NoOpPasswordEncoder.getInstance();
@@ -31,7 +31,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/js/**", "/css/**","/img/**").permitAll() //log dodawanie "/index", "/main"
+                .antMatchers("/mainForUser").hasRole("ADMIN")
+                .antMatchers("/", "/js/**", "/css/**","/img/**").permitAll()
+
+                //log dodawanie "/index", "/main"
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
