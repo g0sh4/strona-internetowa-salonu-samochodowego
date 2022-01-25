@@ -125,10 +125,10 @@ h4{
 
 .bttn{
     border: 0.5px dark gray;
-    padding:10px 30px;
+    padding:10px 20px;
     color:tan;
     font-family:"Tahoma", "sans-serif";
-    font-size: 22px;
+    font-size: 18px;
     text-decoration: none;
     background: rgba(0, 0, 0, 0.55);
     border-radius: 12px;
