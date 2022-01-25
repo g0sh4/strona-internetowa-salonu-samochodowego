@@ -54,6 +54,7 @@
             <li class="homebtn"> <a href="#home">home</a> </li>
             <li> <a href="#baza1">baza1</a> </li>
             <li> <a href="#baza2">baza2</a> </li>
+            <li> <a href="/mainForUser">Admin</a> </li>
             <!--<li> <a href="/index" type="submit" >Log Out</a> </li>  -->
             <!-- tutaj najprawdopodobniej do poprawyyy -->
             <li><form th:action="@{/logout}" method="post">
@@ -83,9 +84,9 @@
             </div>
 
             <div id="baza1">
-
+                <a href="/new">Enter new sale<a/>
                 <!-- Table -->
-                <table border = "1" cellpadding = "10"> <!-– border –
+                <table id="customers" class="center" style="width:90%"> <!-– border –
                     obramowanie, cellpadding – rozmiar komórki -->
                     <!-- Table header -->
                     <thead>

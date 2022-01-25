@@ -12,6 +12,7 @@ import java.util.List;
 public class AppControler  implements WebMvcConfigurer {
     @Autowired
     private ModeleDAO dao;
+    private MarkiDAO daoMarki;
     @RequestMapping("/")
     public String viewHomePage(Model model){
         List<Modele> listModele = dao.list();
@@ -22,7 +23,9 @@ public class AppControler  implements WebMvcConfigurer {
     @RequestMapping("/main")
     public String addTableToMain(Model model){
         List<Modele> listModele = dao.list();
+        //List<Marki> listMarki = daoMarki.list();
         model.addAttribute("listModele",listModele);
+        //model.addAttribute("listMarki",listMarki);
         return "main";
 
     }
@@ -32,6 +35,15 @@ public class AppControler  implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("index");    //main z pdf to index u nas
         registry.addViewController("/main").setViewName("main");
         registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/mainForUser").setViewName("mainForUser");
+    }
+
+    @RequestMapping("/new")
+    public String showNewForm(Model model){
+        Modele modele = new Modele();
+        model.addAttribute("modele",modele);
+
+        return "new_form";
     }
 
 
