@@ -15,6 +15,10 @@ public class Marki {
         this.opis = opis;
         this.nazwa = nazwa;
     }
+    public Marki(String nazwa){
+        super();
+        this.nazwa=nazwa;
+    }
 
 
     public String nazwa() {
