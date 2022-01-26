@@ -4,6 +4,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 
@@ -28,7 +30,11 @@ public class ModeleDAO {
         return listModele;
     }
     /* Insert – wstawianie nowego wiersza do bazy */
-    public void save(Modele sale) {
+    public void save(Modele modele,Marki marki) {
+        SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
+        insertActor.withTableName("marki").usingColumns("nazwaMarki");
+        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(marki);
+        insertActor.execute(param);
     }
     /* Read – odczytywanie danych z bazy */
     public Modele get(int id) {
@@ -40,4 +46,6 @@ public class ModeleDAO {
     /* Delete – wybrany rekord z danym id */
     public void delete(int id) {
     }
+
+
 }
