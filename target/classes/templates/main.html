@@ -91,20 +91,28 @@
                     <!-- Table header -->
                     <thead>
                     <tr> <!-- Table row -->
-                        <th>ID modelu</th> <!–- Table column -->
-                        <th>ID marki</th>
-                        <th>kod</th>
-                        <th>opis</th>
+                        <th>Nazwa Marki</th> <!–- Table column -->
+                        <th>Kod modelu</th>
+                        <th>Rok Produkcji</th>
+                        <th>Pojemnosc Silnika</th>
+                        <th>Rodzaj Paliwa</th> <!–- Table column -->
+                        <th>Standart Wyposazenia</th>
+                        <th>Cena</th>
+                        <th>Dostepnosc</th>
 
                     </tr>
                     </thead>
                     <!-- Table body -->
                     <tbody>
                     <tr th:each = "Modele : ${listModele}">
-                        <td th:text = "${Modele.idModelu}">ID modelu</td>
-                        <td th:text = "${Modele.idMarki}">ID marki</td>
-                        <td th:text = "${Modele.kod}">kod</td>
-                        <td th:text = "${Modele.opis}">opis</td>
+                        <td th:text = "${Modele.nazwaMarki}">Nazwa Marki</td>
+                        <td th:text = "${Modele.kod}">Kod modelu</td>
+                        <td th:text = "${Modele.rokProdukcji}">Rok Produkcji</td>
+                        <td th:text = "${Modele.pojemnoscSilnika}">Pojemnosc silnika</td>
+                        <td th:text = "${Modele.rodzajPaliwa}">Rodzaj Paliwa</td>
+                        <td th:text = "${Modele.standartWyposazenia}">Standart Wyposazenia</td>
+                        <td th:text = "${Modele.cena}">Cena</td>
+                        <td th:text = "${Modele.dostepnosc}">Dostepnosc</td>
                     </tr>
                     </tbody>
                 </table>
