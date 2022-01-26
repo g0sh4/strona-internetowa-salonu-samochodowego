@@ -20,9 +20,11 @@ public class ModeleDAO {
 
     /* Import java.util.List */
     public List<Modele> list(){
-        String sql = "select * from modele";
-        List<Modele> listModele = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Modele.class));
+        String sql = "SELECT mo.kod_modelu,ma.nazwa,s.rok_produkcji,s.pojemnosc_silnika,s.rodzaj_paliwa,s.standart_wyposazenia, s.cena,s.dostepnosc "+
+                " FROM Samochody s JOIN Modele mo On (mo.id_modelu = s.id_modelu) JOIN Marki ma ON (ma.id_marki = mo.id_marki)";
 
+
+        List<Modele> listModele = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Modele.class));
         return listModele;
     }
     /* Insert – wstawianie nowego wiersza do bazy */

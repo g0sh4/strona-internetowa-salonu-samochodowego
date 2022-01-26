@@ -23,9 +23,7 @@ public class AppControler  implements WebMvcConfigurer {
     @RequestMapping("/main")
     public String addTableToMain(Model model){
         List<Modele> listModele = dao.list();
-        //List<Marki> listMarki = daoMarki.list();
         model.addAttribute("listModele",listModele);
-        //model.addAttribute("listMarki",listMarki);
         return "main";
 
     }
