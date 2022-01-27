@@ -124,6 +124,7 @@ background-color:rgba(253,253,253,0.7);
 </div>
 
 <div th:if="${param.logout}">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     You have been logged out.
 </div>
 <form th:action="@{/login}" method="post">
