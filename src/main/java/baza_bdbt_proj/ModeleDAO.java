@@ -32,7 +32,7 @@ public class ModeleDAO {
     /* Insert – wstawianie nowego wiersza do bazy */
     public void save(Modele modele,Marki marki) {
         SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
-        insertActor.withTableName("marki").usingColumns("nazwaMarki");
+        insertActor.withTableName("marki").usingColumns("nazwa");
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(marki);
         insertActor.execute(param);
     }

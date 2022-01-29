@@ -27,6 +27,7 @@ public class MarkiDAO {
     }
     /* Insert – wstawianie nowego wiersza do bazy */
     public void save(Marki sale) {
+
     }
     /* Read – odczytywanie danych z bazy */
     public Marki get(int id) {
