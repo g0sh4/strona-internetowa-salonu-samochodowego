@@ -42,7 +42,6 @@ public class AppControler  implements WebMvcConfigurer {
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     public String save(@ModelAttribute("modele") Modele modele,@ModelAttribute("marki") Marki marki){
         dao.save(modele,marki);
-
         return "redirect:/mainForUser";
     }
 
@@ -54,6 +53,7 @@ public class AppControler  implements WebMvcConfigurer {
         registry.addViewController("/main").setViewName("main");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/mainForUser").setViewName("mainForUser");
+        registry.addViewController("/save").setViewName("save");
     }
 
     @RequestMapping("/new")

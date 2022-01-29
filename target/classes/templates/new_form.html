@@ -1,56 +1,154 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="https://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
 <head>
-    <meta charset="UTF-8">
-    <title>New Model</title>
+    <!-- Design by foolishdeveloper.com -->
+    <title>McQuinni</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../img/bg2.jpg');
+    height:200vh;
+    background-size:cover;
+    background-position:center;
+
+}
+
+
+form{
+margin-top:270px;
+    height: 1190px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    border: 0.4px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input, select, option{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.59);
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+button:hover{
+background-color:rgba(253,253,253,0.7);
+}
+.alert {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.59);
+  color: white;
+  font-family: 'Poppins',sans-serif;
+  font-size: 20px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+
+
+    </style>
 </head>
 <body>
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
 
-<div align="center">
-    <h1> Enter New Sale</h1>
-    <form action="#" th:action="@{/save}" th:object="${modele}" method=""post>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form action="#" th:action="@{/save}" th:object="${modele}" method="post">
+    <h3>Wprowadź dane samochodu:</h3>
 
-
-    <table border = "1" cellpadding="10">
-        <tr>
-            <td>Nazwa Marki:</td>
-            <td><input type="text" th:field="*{nazwaMarki}"></td>
-        </tr>
-        <tr>
-            <td>Kod modelu:</td>
-            <td><input type="text" th:field="*{kod}"></td>
-        </tr>
-        <tr>
-            <td>Rok produkcji:</td>
-            <td><input type="text" th:field="*{rokProdukcji}"></td>
-        </tr>
-        <tr>
-            <td>Pojemnosc Silnika:</td>
-            <td><input type="text" th:field="*{pojemnoscSilnika}"></td>
-        </tr>
-        <tr>
-            <td>Rodzaj Paliwa:</td>
-            <td><input type="text" th:field="*{rodzajPaliwa}"></td>
-        </tr>
-        <tr>
-            <td>Standart Wyposazenia:</td>
-            <td><input type="text" th:field="*{standartWyposazenia}"></td>
-        </tr>
-        <tr>
-            <td>Cena:</td>
-            <td><input type="text" th:field="*{cena}"></td>
-        </tr>
-        <tr>
-            <td>Dostepnosc:</td>
-            <td><input type="text" th:field="*{dostepnosc}"></td>
-        </tr>
-        <tr>
-            <td colspan="2"><button type="sumbit">Save</button></td>
-        </tr>
-
-    </table>
-    </form>
+    <div><label> Nazwa marki: <input type="text" th:field="*{nazwaMarki}"> </label></div>
+    <div><label> Kod modelu: <input type="text" th:field="*{kod}"> </label></div>
+    <div><label> Rok produkcji: <input type="text" th:field="*{rokProdukcji}"> </label></div>
+    <div><label> Pojemność silnika: <input type="text" th:field="*{pojemnoscSilnika}"> </label></div>
+    <div><label> Rodzaj paliwa:<select type="text" th:field="*{rodzajPaliwa}">
+        <option value="benzyna"> benzynka B)</option>
+        <option value="dizelek"> dzizelek</option>
+    </select> </label></div>
+    <div><label> Standard wyposażenia: <input type="text" th:field="*{standartWyposazenia}"> </label></div>
+    <div><label> Cena: <input type="text" th:field="*{cena}"> </label></div>
+    <div><label> Dostępność: <input type="text" th:field="*{dostepnosc}"> </label></div>
+    <div>
+        <button type="submit">Zapisz dane</button>
+    </div>
+</form>
+<div th:if="${param.error}" class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    Coś poszło nie tak
 </div>
 
 </body>
