@@ -15,7 +15,36 @@
 
   <title>Mcquinni</title>
   <link rel="stylesheet" href = "css/style.css" >
+  <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  color:white;
 
+}
+
+#customers td, #customers th {
+
+  border-radius: 6px;
+  padding: 8px;
+
+}
+
+#customers tr:nth-child(even){background-color: rgba(255,255,255,0.13);}
+#customers tr:nth-child(odd){background-color: rgba(255,255,255,0.40);}
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgba(255,255,255,0.7);
+  color: white;
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+
+
+</style>
 </head>
 <body>
 <header>
@@ -87,6 +116,7 @@
           </tbody>
         </table>
     </div>
+  
     <div id="baza2">
 
       <table id="customers" class="center" style="width:90%">
