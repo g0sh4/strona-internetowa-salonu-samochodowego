@@ -5,7 +5,7 @@ public class Modele {
     private String kod;
     //private String opis;
     //private int idMarki;
-    private String nazwaMarki;
+    private String nazwa;
     private String rokProdukcji;
     private String pojemnoscSilnika;
     private String rodzajPaliwa;
@@ -17,7 +17,7 @@ public class Modele {
 
     }
 
-    public Modele(String kod,String nazwaMarki,String rokProdukcji,
+    public Modele(String kod,String nazwa,String rokProdukcji,
                   String pojemnoscSilnika,String rodzajPaliwa,String standartWyposazenia,int cena,String dostepnosc) {
         //int idModelu, String opis, int idMarki,
         super();
@@ -25,7 +25,7 @@ public class Modele {
         this.kod = kod;
         //this.opis = opis;
         //this.idMarki = idMarki;
-        this.nazwaMarki = nazwaMarki;
+        this.nazwa = nazwa;
         this.rokProdukcji=rokProdukcji;
         this.pojemnoscSilnika=pojemnoscSilnika;
         this.rodzajPaliwa=rodzajPaliwa;
@@ -70,12 +70,12 @@ public class Modele {
 
      */
 
-    public String getNazwaMarki() {
-        return nazwaMarki;
+    public String getNazwa() {
+        return nazwa;
     }
 
-    public void setNazwaMarki(String nazwaMarki) {
-        this.nazwaMarki = nazwaMarki;
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
     }
 
     public String getRokProdukcji() {
@@ -130,7 +130,7 @@ public class Modele {
     public String toString() {
         return "Modele{" +
                 ", kod='" + kod + '\'' +
-                ", nazwaMarki='" + nazwaMarki + '\'' +
+                ", nazwaMarki='" + nazwa + '\'' +
                 ", rokProdukcji='" + rokProdukcji + '\'' +
                 ", pojemnoscSilnika='" + pojemnoscSilnika + '\'' +
                 ", rodzajPaliwa='" + rodzajPaliwa + '\'' +

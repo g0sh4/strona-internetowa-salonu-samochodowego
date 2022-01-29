@@ -1,6 +1,7 @@
 package baza_bdbt_proj;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +15,10 @@ import java.util.List;
 public class AppControler  implements WebMvcConfigurer {
     @Autowired
     private ModeleDAO dao;
+    @Autowired
     private MarkiDAO daoMarki;
+    @Autowired
+    private PracownikDAO daoPracownik;
 
     @RequestMapping("/")
     public String viewHomePage(Model model) {
@@ -35,14 +39,16 @@ public class AppControler  implements WebMvcConfigurer {
     @RequestMapping("/mainForUser")
     public String addTableToMainForUser(Model model) {
         List<Modele> listModele = dao.list();
+        List<Pracownik> listPracownik = daoPracownik.list();
         model.addAttribute("listModele", listModele);
+        model.addAttribute("listPracownik", listPracownik);
         return "mainForUser";
 
     }
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     public String save(@ModelAttribute("modele") Modele modele,@ModelAttribute("marki") Marki marki){
         dao.save(modele,marki);
-        return "redirect:/mainForUser";
+        return "redirect: mainForUser";
     }
 
 
