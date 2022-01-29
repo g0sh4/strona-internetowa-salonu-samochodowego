@@ -33,7 +33,7 @@ public class ModeleDAO {
     public void save(Modele modele,Marki marki) {
         SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
         insertActor.withTableName("marki").usingColumns("nazwa");
-        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(marki);
+        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(modele);
         insertActor.execute(param);
     }
     /* Read – odczytywanie danych z bazy */
