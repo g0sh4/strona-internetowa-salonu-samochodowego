@@ -58,8 +58,18 @@ public class AppControler  implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("index");    //main z pdf to index u nas
         registry.addViewController("/main").setViewName("main");
         registry.addViewController("/login").setViewName("login");
-        registry.addViewController("/mainForUser").setViewName("mainForUser");
+        registry.addViewController("/mainForAdmin").setViewName("mainForAdmin");
+        registry.addViewController("/ofertaUser").setViewName("ofertaUser");
         registry.addViewController("/save").setViewName("save");
+        registry.addViewController("/ofertaAdmin").setViewName("ofertaAdmin");
+        registry.addViewController("/oKlientachFirmaAdmin").setViewName("oKlientachFirmaAdmin");
+        registry.addViewController("/oKlientachPrywatnychAdmin").setViewName("oKlientachPrywatnychAdmin");
+        registry.addViewController("/pracownicyAdmin").setViewName("pracownicyAdmin");
+        registry.addViewController("/new_form").setViewName("new_form");
+        registry.addViewController("/new_worker").setViewName("new_worker");
+        registry.addViewController("/errorPage").setViewName("errorPage");
+        registry.addViewController("/newKlientFirma").setViewName("newKlientFirma");
+        registry.addViewController("/newKlientPrywatny").setViewName("newKlientPrywatny");
     }
 
     @RequestMapping("/new")
@@ -68,6 +78,7 @@ public class AppControler  implements WebMvcConfigurer {
         model.addAttribute("modele",modele);
         return "new_form";
     }
+
 
 
 
