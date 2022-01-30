@@ -16,15 +16,17 @@ public class AppControler  implements WebMvcConfigurer {
     @Autowired
     private ModeleDAO dao;
     @Autowired
-    private MarkiDAO daoMarki;
-    @Autowired
     private PracownikDAO daoPracownik;
+    @Autowired
+    private KlientPrywatnyDAO daoKlientPrywatny;
+    @Autowired
+    private FirmaDAO daoFirma;
 
-    @RequestMapping("/")
+    @RequestMapping("/pracownicyAdmin")
     public String viewHomePage(Model model) {
-        List<Modele> listModele = dao.list();
-        model.addAttribute("listModele", listModele);
-        return "index";
+        List<Pracownik> listPracownik = daoPracownik.list();
+        model.addAttribute("listPracownik", listPracownik);
+        return "pracownicyAdmin";
 
     }
 
@@ -35,19 +37,44 @@ public class AppControler  implements WebMvcConfigurer {
         return "main";
 
     }
+    @RequestMapping("/ofertaUser")
+    public String addTableOfertaUser(Model model) {
+        List<Modele> listModele = dao.list();
+        //List<Pracownik> listPracownik = daoPracownik.list();
+        model.addAttribute("listModele", listModele);
+        //model.addAttribute("listPracownik", listPracownik);
+        return "ofertaUser";
 
-    @RequestMapping("/mainForUser")
-    public String addTableToMainForUser(Model model) {
+    }
+
+    @RequestMapping("/ofertaAdmin")
+    public String addTableToOfertaAdmin(Model model) {
         List<Modele> listModele = dao.list();
         List<Pracownik> listPracownik = daoPracownik.list();
         model.addAttribute("listModele", listModele);
         model.addAttribute("listPracownik", listPracownik);
-        return "mainForUser";
+        return "ofertaAdmin";
 
     }
+
+    @RequestMapping("/oKlientachPrywatnychAdmin")
+    public String addTabletoOKlientachPrywatnychAdmin(Model model) {
+        List<KlientPrywatny> listKlientPrywatny = daoKlientPrywatny.list();
+        model.addAttribute("listKlientPrywatny", listKlientPrywatny);
+        return "oKlientachPrywatnychAdmin";
+
+    }
+    @RequestMapping("/oKlientachFirmaAdmin")
+    public String addTabletoOKlientachFirmaAdmin(Model model) {
+        List<Firma> listFirma = daoFirma.list();
+        model.addAttribute("listFirma", listFirma);
+        return "oKlientachFirmaAdmin";
+
+    }
+
     @RequestMapping(value = "/save",method = RequestMethod.POST)
-    public String save(@ModelAttribute("modele") Modele modele,@ModelAttribute("marki") Marki marki){
-        dao.save(modele,marki);
+    public String save(@ModelAttribute("modele") Modele modele){
+        dao.save(modele);
         return "redirect: mainForUser";
     }
 

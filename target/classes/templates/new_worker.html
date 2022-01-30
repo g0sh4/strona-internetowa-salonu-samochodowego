@@ -145,32 +145,22 @@ background-color:rgba(253,253,253,0.7);
     You have been logged out.
 </div>
 <form action="#" th:action="@{/save}" th:object="${modele}" method="post">
-    <h3>Wprowadź dane samochodu:</h3>
-
-    <div><label> Nazwa marki: <input type="text" th:field="*{markaAuta}"> </label></div>
-    <div><label> Kod modelu: <input type="text" th:field="*{modelAuta}"> </label></div>
-    <div><label> Rok produkcji: <input type="text" th:field="*{rokProdukcji}"> </label></div>
-    <div><label> Pojemność silnika: <input type="text" th:field="*{pojemnoscSilnika}"> </label></div>
-    <div><label> Rodzaj paliwa:<select type="text" th:field="*{rodzajPaliwa}">
+    <h3>Wprowadź dane pracownika:</h3>
+    <!-- tu poprawić tak żeby działało-->
+    <div><label> Imie: <input type="text" th:field="*{nazwa}"> </label></div>
+    <div><label> Nazwisko: <input type="text" th:field="*{kod}"> </label></div>
+    <div><label> Data urodzenia: <input type="text" th:field="*{rokProdukcji}"> </label></div>
+    <div><label> Pesel: <input type="text" th:field="*{pojemnoscSilnika}"> </label></div>
+    <div><label> Płeć:<select type="text" th:field="*{rodzajPaliwa}">
         <option value=""> </option>
-        <option value="DIESEL">diesel</option>
-        <option value="BENZYNA">benzyna</option>
-        <!--<option value="dizelek">LPG</option>
-        <option value="dizelek">elektryczny</option> -->
+        <option value="K">diesel</option>
+        <option value="M">benzyna</option>
     </select> </label></div>
-    <div><label> Standard wyposażenia: <select type="text" th:field="*{standartWyposazenia}">
-        <option value=""> </option>
-        <option value="CLASSIC">Classic</option>
-        <option value="PREMIUM">Premium</option>
-        <option value="PREMIUM+">Premium+</option>
-    </select></label></div>
-    <div><label> Cena: <input type="text" th:field="*{cena}"> </label></div>
-    <div><label> Dostępność: <select type="text" th:field="*{dostepnosc}">
-        <option value=""> </option>
-        <option value="W SALONIE">W salonie</option>
-        <option value="NA ZAMOWIENIE">Na zamowienie</option>
-    </select>
-    </label></div>
+    <div><label> Data zatrudnienia: <input type="text" th:field="*{standartWyposazenia}"></label></div>
+    <div><label> Nr telefonu: <input type="text" th:field="*{cena}"> </label></div>
+    <div><label> Wysokość wynagrodzenia: <input type="text" th:field="*{dostepnosc}"></label></div>
+    <div><label> Miasto: <input type="text" th:field="*{dostepnosc}"></label></div>
+    <div><label> Ulica: <input type="text" th:field="*{dostepnosc}"></label></div>
     <div>
         <button type="submit">Zapisz dane</button>
     </div>

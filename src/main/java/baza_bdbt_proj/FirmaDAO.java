@@ -9,31 +9,30 @@ import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 @Repository
-public class PracownikDAO {
+public class FirmaDAO {
     @Autowired
     public JdbcTemplate jdbcTemplate;
 
-    public PracownikDAO(JdbcTemplate jdbcTemplate) {
+    public FirmaDAO(JdbcTemplate jdbcTemplate) {
         super();
         this.jdbcTemplate = jdbcTemplate;
     }
-    public List<Pracownik> list(){
-        String sql = "SELECT p.imie,p.nazwisko,p.data_urodzenia,p.pesel,p.plec,p.data_zatrudnienia,p.nr_telefonu,p.wysokosc_wynagrodzenia"+
-                ",p.miasto,p.ulica FROM Pracownicy p ";
+    public List<Firma> list(){
+        String sql = "SELECT f.nazwa,f.nip,f.numer_krs,f.numer_regon,f.miasto,f.ulica,f.nr_telefonu,f.email FROM firmy f";
 
 
-        List<Pracownik> listPracownik = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Pracownik.class));
-        return listPracownik;
+        List<Firma> listFirma = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Firma.class));
+        return listFirma;
     }
     public void save() {
 
     }
     /* Read – odczytywanie danych z bazy */
-    public Modele get(int id) {
+    public Firma get(int id) {
         return null;
     }
     /* Update – aktualizacja danych */
-    public void update(Modele sale) {
+    public void update(Firma sale) {
     }
     /* Delete – wybrany rekord z danym id */
     public void delete(int id) {

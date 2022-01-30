@@ -1,11 +1,9 @@
 package baza_bdbt_proj;
 
 public class Modele {
-    //private int idModelu;
-    private String kod;
-    //private String opis;
-    //private int idMarki;
-    private String nazwa;
+
+    private String modelAuta;
+    private String markaAuta;
     private String rokProdukcji;
     private String pojemnoscSilnika;
     private String rodzajPaliwa;
@@ -17,15 +15,12 @@ public class Modele {
 
     }
 
-    public Modele(String kod,String nazwa,String rokProdukcji,
+    public Modele(String modelAuta,String markaAuta,String rokProdukcji,
                   String pojemnoscSilnika,String rodzajPaliwa,String standartWyposazenia,int cena,String dostepnosc) {
-        //int idModelu, String opis, int idMarki,
+
         super();
-        //this.idModelu = idModelu;
-        this.kod = kod;
-        //this.opis = opis;
-        //this.idMarki = idMarki;
-        this.nazwa = nazwa;
+        this.modelAuta = modelAuta;
+        this.markaAuta = markaAuta;
         this.rokProdukcji=rokProdukcji;
         this.pojemnoscSilnika=pojemnoscSilnika;
         this.rodzajPaliwa=rodzajPaliwa;
@@ -33,49 +28,21 @@ public class Modele {
         this.cena=cena;
         this.dostepnosc=dostepnosc;
     }
-    /*
-    public int getIdModelu() {
-        return idModelu;
+
+    public String getModelAuta() {
+        return modelAuta;
     }
 
-    public void setIdModelu(int idModelu) {
-        this.idModelu = idModelu;
+    public void setModelAuta(String modelAuta) {
+        this.modelAuta = modelAuta;
     }
 
-     */
-
-    public String getKod() {
-        return kod;
+    public String getMarkaAuta() {
+        return markaAuta;
     }
 
-    public void setKod(String kod) {
-        this.kod = kod;
-    }
-    /*
-    public String getOpis() {
-        return opis;
-    }
-
-    public void setOpis(String opis) {
-        this.opis = opis;
-    }
-
-    public int getIdMarki() {
-        return idMarki;
-    }
-
-    public void setIdMarki(int idMarki) {
-        this.idMarki = idMarki;
-    }
-
-     */
-
-    public String getNazwa() {
-        return nazwa;
-    }
-
-    public void setNazwa(String nazwa) {
-        this.nazwa = nazwa;
+    public void setMarkaAuta(String markaAuta) {
+        this.markaAuta = markaAuta;
     }
 
     public String getRokProdukcji() {
@@ -129,8 +96,8 @@ public class Modele {
     @Override
     public String toString() {
         return "Modele{" +
-                ", kod='" + kod + '\'' +
-                ", nazwaMarki='" + nazwa + '\'' +
+                "modelAuta='" + modelAuta + '\'' +
+                ", markaAuta='" + markaAuta + '\'' +
                 ", rokProdukcji='" + rokProdukcji + '\'' +
                 ", pojemnoscSilnika='" + pojemnoscSilnika + '\'' +
                 ", rodzajPaliwa='" + rodzajPaliwa + '\'' +
