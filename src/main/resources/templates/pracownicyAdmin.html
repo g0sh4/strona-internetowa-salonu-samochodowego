@@ -108,7 +108,7 @@
                     <!-- Icons -->
                     <li class="nav-item me-3 me-lg-0">
                         <form th:action="@{/logout}" method="post">
-                            <input class="btn btn-outline-light btn-lg m-0.1" role="button" type="submit" value="Wyloguj się"/>
+                            <input class="btn btn-outline-light btn-sm m-0.1" role="button" type="submit" value="Wyloguj się"/>
                         </form>
                     </li>
 
@@ -167,8 +167,8 @@
                                                 <td th:text = "${Pracownik.wysokoscWynagrodzenia}">Wysokość wnagrodzenia</td>
                                                 <td th:text = "${Pracownik.miasto}">Miasto</td>
                                                 <td th:text = "${Pracownik.ulica}">Ulica</td>
-                                                <td><a th:href="@{'/editNieDziaua/'+ ${Pracownik.id_pracownik}}">Edytuj</a></td>
-                                                <td><a th:href="@{'/deletePracownik/' + ${Pracownik.id_pracownik}}">Usuń</a></td>
+                                                <td><a th:href="@{'/editNieDziaua/'+ ${Pracownik.id_pracownik}}"><p class="text-info">Edytuj</p></a></td>
+                                                <td><a th:href="@{'/deletePracownik/' + ${Pracownik.id_pracownik}}"><p class="text-danger">Usuń</p></a></td>
                                             </tr>
                                             </tbody>
                                         </table>
