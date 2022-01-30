@@ -18,13 +18,19 @@ public class FirmaDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
     public List<Firma> list(){
-        String sql = "SELECT f.nazwa,f.nip,f.numer_krs,f.numer_regon,f.miasto,f.ulica,f.nr_telefonu,f.email FROM firmy f";
+        String sql = "SELECT f.id_klienta,f.nazwa,f.nip,f.numer_krs,f.numer_regon,f.miasto,f.ulica,f.nr_telefonu,f.email FROM firmy f";
 
 
         List<Firma> listFirma = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Firma.class));
         return listFirma;
     }
-    public void save() {
+    public void save(Firma firma) {
+        SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
+        insertActor.withTableName("firmy").usingColumns("nazwa","nip",   // ,"numer_krs","numer_regon"
+                "miasto","ulica","nr_telefonu","email");
+
+        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(firma);
+        insertActor.execute(param);
 
     }
     /* Read – odczytywanie danych z bazy */
@@ -35,6 +41,8 @@ public class FirmaDAO {
     public void update(Firma sale) {
     }
     /* Delete – wybrany rekord z danym id */
-    public void delete(int id) {
+    public void delete(int id_klienta) {
+        String sql = "delete from firmy where id_klienta= ?";
+        jdbcTemplate.update(sql,id_klienta);
     }
 }

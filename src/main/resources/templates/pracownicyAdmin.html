@@ -135,17 +135,19 @@
                                             <!-- Table header -->
                                             <thead>
                                             <tr> <!-- Table row -->
+                                                <th>ID pracownika</th>
                                                 <th>Imie</th> <!–- Table column -->
                                                 <th>Nazwisko</th>
                                                 <th>Data urodzenia</th>
                                                 <th>Pesel</th>
                                                 <th>Płeć</th> <!–- Table column -->
-                                                <th>Data zatrudnienia</th>
+                                                <!--<th>Data zatrudnienia</th> -->
                                                 <th>Numer telefonu</th>
                                                 <th>Wysokość wnagrodzenia</th>
                                                 <th>Miasto</th>
                                                 <th>Ulica</th>
-                                                <th>Edytuj/usuń</th>
+                                                <th>Edytuj</th>
+                                                <th>Usuń</th>
 
 
                                             </tr>
@@ -154,22 +156,24 @@
 
                                             <tbody>
                                             <tr th:each = "Pracownik : ${listPracownik}">
+                                                <td th:text = "${Pracownik.id_pracownik}">ID pracownika</td>
                                                 <td th:text = "${Pracownik.imie}">Imie</td>
                                                 <td th:text = "${Pracownik.nazwisko}">Nazwisko</td>
                                                 <td th:text = "${Pracownik.dataUrodzenia}">Data urodzenia</td>
                                                 <td th:text = "${Pracownik.pesel}">>Pesel</td>
                                                 <td th:text = "${Pracownik.plec}">Płeć</td>
-                                                <td th:text = "${Pracownik.dataZatrudniena}">Data zatrudnienia</td>
+                                                <!--<td th:text = "${Pracownik.dataZatrudniena}">Data zatrudnienia</td> -->
                                                 <td th:text = "${Pracownik.nrTelefonu}">Numer telefonu</td>
                                                 <td th:text = "${Pracownik.wysokoscWynagrodzenia}">Wysokość wnagrodzenia</td>
                                                 <td th:text = "${Pracownik.miasto}">Miasto</td>
                                                 <td th:text = "${Pracownik.ulica}">Ulica</td>
-                                                <td>Edytuj/Usuń</td>
+                                                <td><a th:href="@{'/editNieDziaua/'+ ${Pracownik.id_pracownik}}">Edytuj</a></td>
+                                                <td><a th:href="@{'/deletePracownik/' + ${Pracownik.id_pracownik}}">Usuń</a></td>
                                             </tr>
                                             </tbody>
                                         </table>
                                         <div class="text-white">
-                                            <a class="btn btn-outline-light btn-lg m-2" href="/new"
+                                            <a class="btn btn-outline-light btn-lg m-2" href="/newPracownik"
                                                role="button">Dodaj pracownika do bazy.</a>
                                         </div>
 

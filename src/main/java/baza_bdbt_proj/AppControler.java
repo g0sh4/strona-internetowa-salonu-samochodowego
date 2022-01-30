@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -75,7 +77,25 @@ public class AppControler  implements WebMvcConfigurer {
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     public String save(@ModelAttribute("modele") Modele modele){
         dao.save(modele);
-        return "redirect: mainForUser";
+        return "redirect:/ofertaAdmin";
+    }
+
+    @RequestMapping(value = "/savePracownik",method = RequestMethod.POST)
+    public String savePracownik(@ModelAttribute("pracownik") Pracownik pracownik){
+        daoPracownik.save(pracownik);
+        return "redirect:/pracownicyAdmin";
+    }
+
+    @RequestMapping(value = "/saveKlientPrywatny",method = RequestMethod.POST)
+    public String saveKlientPrywatny(@ModelAttribute("klientPrywatny") KlientPrywatny klientPrywatny){
+        daoKlientPrywatny.save(klientPrywatny);
+        return "redirect:/oKlientachPrywatnychAdmin";
+    }
+
+    @RequestMapping(value = "/saveFirma",method = RequestMethod.POST)
+    public String saveFirma(@ModelAttribute("firma") Firma firma){
+        daoFirma.save(firma);
+        return "redirect:/oKlientachFirmaAdmin";
     }
 
 
@@ -105,6 +125,66 @@ public class AppControler  implements WebMvcConfigurer {
         model.addAttribute("modele",modele);
         return "new_form";
     }
+
+    @RequestMapping("/newPracownik")
+    public String showNewFormPracownik(Model model){
+        Pracownik pracownik = new Pracownik();
+        model.addAttribute("pracownik",pracownik);
+        return "new_worker";
+    }
+
+    @RequestMapping("/newKlientPrywatny")
+    public String showNewFormKlientPrywatny(Model model){
+        KlientPrywatny klientPrywatny = new KlientPrywatny();
+        model.addAttribute("klientPrywatny",klientPrywatny);
+        return "newKlientPrywatny";
+    }
+
+    @RequestMapping("/newKlientFirma")
+    public String showNewFormKlientFirma(Model model){
+        Firma firma = new Firma();
+        model.addAttribute("firma",firma);
+        return "newKlientFirma";
+    }
+
+    @RequestMapping("/edit/{id_pojazdu}")
+    public ModelAndView showEditForm(@PathVariable(name = "id_pojazdu") int id_modelu){
+        ModelAndView mav = new ModelAndView("edit_form");
+        Modele modele = dao.get(id_modelu);
+        mav.addObject("modele",modele);
+        return mav;
+    }
+
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    public String update(@ModelAttribute("modele") Modele modele){
+        dao.update(modele);
+        return "redirect:/ofertaAdmin";
+    }
+
+    @RequestMapping("/deleteModele/{id_pojazdu}")
+    public String delete(@PathVariable(name = "id_pojazdu") int id_pojazdu){
+        dao.delete(id_pojazdu);
+        return "redirect:/ofertaAdmin";
+    }
+
+    @RequestMapping("/deletePracownik/{id_pracownik}")
+    public String deletePracownik(@PathVariable(name = "id_pracownik") int id_pracownik){
+        daoPracownik.delete(id_pracownik);
+        return "redirect:/pracownicyAdmin";
+    }
+    @RequestMapping("/deleteKlient/{id_klienta}")
+    public String deleteKlient(@PathVariable(name = "id_klienta") int id_klienta){
+        daoKlientPrywatny.delete(id_klienta);
+        return "redirect:/oKlientachPrywatnychAdmin";
+    }
+
+    @RequestMapping("/deleteFirma/{id_klienta}")
+    public String deleteFirma(@PathVariable(name = "id_klienta") int id_klienta){
+        daoFirma.delete(id_klienta);
+        return "redirect:/oKlientachFirmaAdmin";
+    }
+
+
 
 
 

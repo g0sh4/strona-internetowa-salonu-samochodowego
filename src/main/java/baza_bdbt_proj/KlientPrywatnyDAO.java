@@ -18,14 +18,19 @@ public class KlientPrywatnyDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
     public List<KlientPrywatny> list(){
-        String sql = "SELECT o.imie,o.nazwisko,o.miasto,o.ulica,o.nr_telefonu,o.email FROM osoby_prywatne o ";
+        String sql = "SELECT o.id_klienta,o.imie,o.nazwisko,o.miasto,o.ulica,o.nr_telefonu,o.email FROM osoby_prywatne o ";
 
 
         List<KlientPrywatny> listKlientPrywatny = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(KlientPrywatny.class));
         return listKlientPrywatny;
     }
-    public void save() {
+    public void save(KlientPrywatny klientPrywatny) {
+        SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
+        insertActor.withTableName("osoby_prywatne").usingColumns("imie","nazwisko","miasto","ulica",   //
+                "nr_telefonu","email");
 
+        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(klientPrywatny);
+        insertActor.execute(param);
     }
     /* Read – odczytywanie danych z bazy */
     public KlientPrywatny get(int id) {
@@ -35,6 +40,8 @@ public class KlientPrywatnyDAO {
     public void update(KlientPrywatny sale) {
     }
     /* Delete – wybrany rekord z danym id */
-    public void delete(int id) {
+    public void delete(int id_klienta) {
+        String sql = "delete from osoby_prywatne where id_klienta= ?";
+        jdbcTemplate.update(sql,id_klienta);
     }
 }

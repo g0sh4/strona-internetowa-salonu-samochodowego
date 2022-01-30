@@ -140,13 +140,17 @@ background-color:rgba(253,253,253,0.7);
 <div th:if="${param.logout}">
     You have been logged out.
 </div>
-<form action="#" th:action="@{/save}" th:object="${modele}" method="post">
+<form action="#" th:action="@{/saveFirma}" th:object="${firma}" method="post">
     <h3>Wprowadź dane klienta-firmy:</h3>
 
     <div><label> Nazwa: <input type="text" th:field="*{nazwa}"> </label></div>
-    <div><label> NIP: <input type="text" th:field="*{kod}"> </label></div>
-    <div><label> Nr telefonu: <input type="text" th:field="*{rokProdukcji}"> </label></div>
-    <div><label> Adres email: <input type="text" th:field="*{pojemnoscSilnika}"> </label></div>
+    <div><label> NIP: <input type="text" th:field="*{nip}"> </label></div>
+    <!--<div><label> Nr KRS: <input type="text" th:field="*{nrKRS}"> </label></div>
+    <div><label> Nr REGON: <input type="text" th:field="*{nrREGON}"> </label></div> -->
+    <div><label> Miasto: <input type="text" th:field="*{miasto}"> </label></div>
+    <div><label> Ulica: <input type="text" th:field="*{ulica}"> </label></div>
+    <div><label> Nr telefonu: <input type="text" th:field="*{nrTelefonu}"> </label></div>
+    <div><label> Adres email: <input type="text" th:field="*{email}"> </label></div>
 
     </label></div>
     <div>
