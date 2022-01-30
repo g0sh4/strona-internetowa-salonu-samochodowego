@@ -30,7 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/mainForUser","/new_form", "/save").hasRole("ADMIN")
+                .antMatchers("/mainForAdmin","/new_form","new_worker", "/save").hasRole("ADMIN")
                 .antMatchers("/", "/js/**", "/css/**","/img/**").permitAll()
 
                 //log dodawanie "/index", "/main"
@@ -38,7 +38,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/main#home", true)
+                .defaultSuccessUrl("/main#intro", true)
                 .permitAll()
                 .and()
                 .logout()
