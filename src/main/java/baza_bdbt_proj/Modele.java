@@ -1,7 +1,7 @@
 package baza_bdbt_proj;
 
 public class Modele {
-
+    private int id_pojazdu;
     private String modelAuta;
     private String markaAuta;
     private String rokProdukcji;
@@ -15,10 +15,11 @@ public class Modele {
 
     }
 
-    public Modele(String modelAuta,String markaAuta,String rokProdukcji,
+    public Modele(int id_pojazdu,String modelAuta,String markaAuta,String rokProdukcji,
                   String pojemnoscSilnika,String rodzajPaliwa,String standartWyposazenia,int cena,String dostepnosc) {
 
         super();
+        this.id_pojazdu = id_pojazdu;
         this.modelAuta = modelAuta;
         this.markaAuta = markaAuta;
         this.rokProdukcji=rokProdukcji;
@@ -27,6 +28,14 @@ public class Modele {
         this.standartWyposazenia=standartWyposazenia;
         this.cena=cena;
         this.dostepnosc=dostepnosc;
+    }
+
+    public int getId_pojazdu() {
+        return id_pojazdu;
+    }
+
+    public void setId_pojazdu(int id_pojazdu) {
+        this.id_pojazdu = id_pojazdu;
     }
 
     public String getModelAuta() {

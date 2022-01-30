@@ -135,15 +135,17 @@
                                             <!-- Table header -->
                                             <thead>
                                             <tr> <!-- Table row -->
+                                                <th>ID firmy</th>
                                                 <th>Nazwa</th> <!–- Table column -->
                                                 <th>NIP</th>
-                                                <th>Nr KRS</th>
-                                                <th>Nr REGON</th>
+                                                <!--<th>Nr KRS</th>
+                                                <th>Nr REGON</th> -->
                                                 <th>Miasto</th> <!–- Table column -->
                                                 <th>Ulica</th>
                                                 <th>Nr telefonu</th>
                                                 <th>Email</th>
-                                                <th>Edytuj/usuń</th>
+                                                <th>Edytuj</th>
+                                                <th>Usuń</th>
 
 
                                             </tr>
@@ -152,20 +154,22 @@
 
                                             <tbody>
                                             <tr th:each = "Firma : ${listFirma}">
+                                                <td th:text = "${Firma.id_klienta}">ID firmy</td>
                                                 <td th:text = "${Firma.nazwa}">Nazwa</td>
                                                 <td th:text = "${Firma.nip}">NIP</td>
-                                                <td th:text = "${Firma.nrKRS}">Nr KRS</td>
-                                                <td th:text = "${Firma.nrREGON}">Nr REGON</td>
+                                                <!--<td th:text = "${Firma.nrKRS}">Nr KRS</td>
+                                                <td th:text = "${Firma.nrREGON}">Nr REGON</td> -->
                                                 <td th:text = "${Firma.miasto}">Miasto</td>
                                                 <td th:text = "${Firma.ulica}">Ulica</td>
                                                 <td th:text = "${Firma.nrTelefonu}">Nr telefonu</td>
                                                 <td th:text = "${Firma.email}">Email</td>
-                                                <td>Edytuj/Usuń</td>
+                                                <td><a th:href="@{'/editNieDziaua/'+ ${Firma.id_klienta}}">Edytuj</a></td>
+                                                <td><a th:href="@{'/deleteFirma/' + ${Firma.id_klienta}}">Usuń</a></td>
                                             </tr>
                                             </tbody>
                                         </table>
                                         <div class="text-white">
-                                            <a class="btn btn-outline-light btn-lg m-2" href="/new"
+                                            <a class="btn btn-outline-light btn-lg m-2" href="/newKlientFirma"
                                                role="button">Dodaj klienta do bazy.</a>
                                         </div>
 

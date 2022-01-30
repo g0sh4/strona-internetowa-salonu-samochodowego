@@ -135,6 +135,7 @@
                                             <!-- Table header -->
                                             <thead>
                                             <tr> <!-- Table row -->
+                                                <th>ID modelu</th>
                                                 <th>Nazwa Marki</th> <!–- Table column -->
                                                 <th>Kod modelu</th>
                                                 <th>Rok Produkcji</th>
@@ -143,13 +144,15 @@
                                                 <th>Standart Wyposazenia</th>
                                                 <th>Cena</th>
                                                 <th>Dostepnosc</th>
-                                                <th>Edytuj/Usuń</th>
+                                                <th>Edytuj</th>
+                                                <th>Usuń</th>
 
                                             </tr>
                                             </thead>
                                             <!-- Table body -->
                                             <tbody>
                                             <tr th:each = "Modele : ${listModele}">
+                                                <td th:text = "${Modele.id_pojazdu}">ID modelu</td>
                                                 <td th:text = "${Modele.markaAuta}">Nazwa Marki</td>
                                                 <td th:text = "${Modele.modelAuta}">Kod modelu</td>
                                                 <td th:text = "${Modele.rokProdukcji}">Rok Produkcji</td>
@@ -158,7 +161,8 @@
                                                 <td th:text = "${Modele.standartWyposazenia}">Standart Wyposazenia</td>
                                                 <td th:text = "${Modele.cena}">Cena</td>
                                                 <td th:text = "${Modele.dostepnosc}">Dostepnosc</td>
-                                                <td>Edytuj/Usuń</td>
+                                                <td><a th:href="@{'/edit/'+ ${Modele.id_pojazdu}}">Edytuj</a></td>
+                                                <td><a th:href="@{'/deleteModele/' + ${Modele.id_pojazdu}}">Usuń</a></td>
                                             </tr>
                                             </tbody>
                                         </table>

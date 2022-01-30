@@ -1,6 +1,7 @@
 package baza_bdbt_proj;
 
 public class Pracownik {
+    private int id_pracownik;
     private String imie;
     private String nazwisko;
     private String dataUrodzenia;
@@ -16,10 +17,11 @@ public class Pracownik {
     public Pracownik(){
 
     }
-    public Pracownik(String imie, String nazwisko, String dataUrodzenia,
+    public Pracownik(int id_pracownik,String imie, String nazwisko, String dataUrodzenia,
                   String pesel, String plec, String dataZatrudniena,String nrTelefonu, String wysokoscWynagrodzenia
                 , String miasto, String ulica) {
         super();
+        this.id_pracownik = id_pracownik;
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.dataUrodzenia = dataUrodzenia;
@@ -30,6 +32,14 @@ public class Pracownik {
         this.wysokoscWynagrodzenia = wysokoscWynagrodzenia;
         this.miasto = miasto;
         this.ulica = ulica;
+    }
+
+    public int getId_pracownik() {
+        return id_pracownik;
+    }
+
+    public void setId_pracownik(int id_pracownik) {
+        this.id_pracownik = id_pracownik;
     }
 
     public String getImie() {

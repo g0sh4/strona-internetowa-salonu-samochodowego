@@ -1,6 +1,7 @@
 package baza_bdbt_proj;
 
 public class KlientPrywatny {
+    private int id_klienta;
     private String imie;
     private String nazwisko;
     private String miasto;
@@ -13,15 +14,24 @@ public class KlientPrywatny {
 
     }
 
-    public KlientPrywatny(String imie, String nazwisko, String miasto,
+    public KlientPrywatny(int id_klienta,String imie, String nazwisko, String miasto,
                           String ulica, String nrTelefonu, String email) {
         super();
+        this.id_klienta=id_klienta;
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.miasto = miasto;
         this.ulica = ulica;
         this.nrTelefonu = nrTelefonu;
         this.email = email;
+    }
+
+    public int getId_klienta() {
+        return id_klienta;
+    }
+
+    public void setId_klienta(int id_klienta) {
+        this.id_klienta = id_klienta;
     }
 
     public String getImie() {

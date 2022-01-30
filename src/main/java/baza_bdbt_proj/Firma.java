@@ -1,7 +1,7 @@
 package baza_bdbt_proj;
 
 public class Firma {
-
+    private int id_klienta;
     private String nazwa;
     private String nip;
     private String nrKRS;
@@ -15,10 +15,11 @@ public class Firma {
 
     }
 
-    public Firma(String nazwa, String nip, String nrKRS,
+    public Firma(int id_klienta,String nazwa, String nip, String nrKRS,
                   String nrREGON, String miasto, String ulica, String nrTelefonu, String email) {
 
         super();
+        this.id_klienta=id_klienta;
         this.nazwa = nazwa;
         this.nip = nip;
         this.nrKRS = nrKRS;
@@ -27,6 +28,14 @@ public class Firma {
         this.ulica = ulica;
         this.nrTelefonu = nrTelefonu;
         this.email = email;
+    }
+
+    public int getId_klienta() {
+        return id_klienta;
+    }
+
+    public void setId_klienta(int id_klienta) {
+        this.id_klienta = id_klienta;
     }
 
     public String getNazwa() {

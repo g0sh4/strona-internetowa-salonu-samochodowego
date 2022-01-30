@@ -144,23 +144,23 @@ background-color:rgba(253,253,253,0.7);
 <div th:if="${param.logout}">
     You have been logged out.
 </div>
-<form action="#" th:action="@{/save}" th:object="${modele}" method="post">
+<form action="#" th:action="@{/savePracownik}" th:object="${pracownik}" method="post">
     <h3>Wprowadź dane pracownika:</h3>
     <!-- tu poprawić tak żeby działało-->
-    <div><label> Imie: <input type="text" th:field="*{nazwa}"> </label></div>
-    <div><label> Nazwisko: <input type="text" th:field="*{kod}"> </label></div>
-    <div><label> Data urodzenia: <input type="text" th:field="*{rokProdukcji}"> </label></div>
-    <div><label> Pesel: <input type="text" th:field="*{pojemnoscSilnika}"> </label></div>
-    <div><label> Płeć:<select type="text" th:field="*{rodzajPaliwa}">
+    <div><label> Imie: <input type="text" th:field="*{imie}"> </label></div>
+    <div><label> Nazwisko: <input type="text" th:field="*{nazwisko}"> </label></div>
+    <div><label> Data urodzenia: <input type="text" th:field="*{dataUrodzenia}"> </label></div>
+    <div><label> Pesel: <input type="text" th:field="*{pesel}"> </label></div>
+    <div><label> Płeć:<select type="text" th:field="*{plec}">
         <option value=""> </option>
-        <option value="K">diesel</option>
-        <option value="M">benzyna</option>
+        <option value="K">Kobieta</option>
+        <option value="M">Mezczyzna</option>
     </select> </label></div>
-    <div><label> Data zatrudnienia: <input type="text" th:field="*{standartWyposazenia}"></label></div>
-    <div><label> Nr telefonu: <input type="text" th:field="*{cena}"> </label></div>
-    <div><label> Wysokość wynagrodzenia: <input type="text" th:field="*{dostepnosc}"></label></div>
-    <div><label> Miasto: <input type="text" th:field="*{dostepnosc}"></label></div>
-    <div><label> Ulica: <input type="text" th:field="*{dostepnosc}"></label></div>
+    <!--<div><label> Data zatrudnienia: <input type="text" th:field="*{dataZatrudniena}"></label></div> -->
+    <div><label> Nr telefonu: <input type="text" th:field="*{nrTelefonu}"> </label></div>
+    <div><label> Wysokość wynagrodzenia: <input type="text" th:field="*{wysokoscWynagrodzenia}"></label></div>
+    <div><label> Miasto: <input type="text" th:field="*{miasto}"></label></div>
+    <div><label> Ulica: <input type="text" th:field="*{ulica}"></label></div>
     <div>
         <button type="submit">Zapisz dane</button>
     </div>
