@@ -22,17 +22,20 @@ public class ModeleDAO {
 
     /* Import java.util.List */
     public List<Modele> list(){
-        String sql = "SELECT mo.kod_modelu,ma.nazwa,s.rok_produkcji,s.pojemnosc_silnika,s.rodzaj_paliwa,s.standart_wyposazenia, s.cena,s.dostepnosc "+
-                " FROM Samochody s JOIN Modele mo On (mo.id_modelu = s.id_modelu) JOIN Marki ma ON (ma.id_marki = mo.id_marki)";
+        String sql = "SELECT s.model_auta,s.marka_auta,s.rok_produkcji,s.pojemnosc_silnika,s.rodzaj_paliwa"+
+                ",s.standart_wyposazenia, s.cena,s.dostepnosc  FROM Samochody s";
 
 
         List<Modele> listModele = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Modele.class));
         return listModele;
     }
     /* Insert – wstawianie nowego wiersza do bazy */
-    public void save(Modele modele,Marki marki) {
+    public void save(Modele modele) {
         SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
-        insertActor.withTableName("marki").usingColumns("nazwa");
+        insertActor.withTableName("samochody").usingColumns("rok_produkcji","pojemnosc_silnika","rodzaj_paliwa","standart_wyposazenia",
+              "cena","dostepnosc","model_auta","marka_auta");
+        //insertActor.withTableName("samochody").usingColumns("modelAuta","markaAuta","rokProdukcji","pojemnoscSilnika",
+        //       "rodzajPaliwa","StandartWyposazenia","1","1","cena","dostepnosc");
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(modele);
         insertActor.execute(param);
     }
