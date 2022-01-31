@@ -82,7 +82,7 @@
           <!-- Icons -->
           <li class="nav-item me-3 me-lg-0">
             <form th:action="@{/logout}" method="post">
-              <input class="btn btn-outline-light btn-lg m-0.1" role="button" type="submit" value="Wyloguj się"/>
+              <input class="btn btn-outline-light btn-sm m-0.1" role="button" type="submit" value="Wyloguj się"/>
             </form>
           </li>
 
@@ -119,31 +119,31 @@
 
 <!--Main layout-->
 <main class="mt-5">
-  <div class="container">
+  <div class="container" id="aboutUs">
     <!--Section: Content-->
     <section>
       <div class="row">
         <div class="col-md-6 gx-5 mb-4">
           <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-            <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
+            <img src="https://st2.depositphotos.com/1518767/9054/i/600/depositphotos_90543520-stock-photo-row-new-car-at-new.jpg" class="img-fluid" />
             <a href="#!">
               <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
             </a>
           </div>
         </div>
 
-        <div class="col-md-6 gx-5 mb-4" id="aboutUs">
-          <h4><strong>Facilis consequatur eligendi</strong></h4>
+        <div class="col-md-6 gx-5 mb-4">
+          <h4><strong>O naszym salonie</strong></h4>
           <p class="text-muted">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-            eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-            sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+            Jesteśmy salonem samochodowym działającym na rynku od 15 lat. Nasi pracownicy to wybitni fachowcy z
+            wieloletnim doświadczeniem w branży. Z chęcią pomogą dobrać idealne auto do twoich potrzeb - nie zależnie
+            czy szukasz auta sportowego czy rodzinnego.
           </p>
-          <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
+          <p><strong>Kontakt</strong></p>
           <p class="text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
-            nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
-            alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+            <strong>telefon:</strong> 609525963 <br>
+            <strong>email:</strong> supersalonMcQuinni@autko.pl<br>
+            <strong>adres:</strong> Złomek 5/12, 24-100 Warszawa
           </p>
         </div>
       </div>
@@ -154,24 +154,22 @@
 
     <!--Section: Content-->
     <section class="text-center">
-      <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
+      <h4 class="mb-5"><strong>Nasi najlepsi pracownicy.</strong></h4>
 
       <div class="row">
         <div class="col-lg-4 col-md-12 mb-4">
           <div class="card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+              <img src="https://images.theconversation.com/files/338222/original/file-20200528-51467-1ap1kzk.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Marek Mariusz</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+                Wybitny specjalista w branży motoryzacyjnej. Specjalizuje się we wszystkich "francuzach". Uwielbia markę Renault.
               </p>
-              <a href="#!" class="btn btn-primary">Button</a>
             </div>
           </div>
         </div>
@@ -179,18 +177,16 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" class="img-fluid" />
+              <img src="https://assets.website-files.com/60f3460676fbf1035cf3e8c5/610d35827e8852c36116a0a3_car-sales.jpg" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Darek Dariusz</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+                Fanatyk szybkich i drogich samochodów. Znajdzie dla ciebie najlepsze oferty najbardziej luksusowych i prestiżowych aut w atrakcyjnych cenach.
               </p>
-              <a href="#!" class="btn btn-primary">Button</a>
             </div>
           </div>
         </div>
@@ -198,18 +194,16 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
+              <img src="https://thumbs.dreamstime.com/b/visiting-car-dealership-handsome-worker-suit-using-smart-phone-smiling-standing-near-89409303.jpg" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Arek Arkadiusz</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+                Świetnie doradza przy wyborze rodzinnego auta. U niego znajdziesz idealny samochów dla swoich najbliższych.
               </p>
-              <a href="#!" class="btn btn-primary">Button</a>
             </div>
           </div>
         </div>

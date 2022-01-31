@@ -108,7 +108,7 @@
                     <!-- Icons -->
                     <li class="nav-item me-3 me-lg-0">
                         <form th:action="@{/logout}" method="post">
-                            <input class="btn btn-outline-light btn-lg m-0.1" role="button" type="submit" value="Wyloguj się"/>
+                            <input class="btn btn-outline-light btn-sm m-0.1" role="button" type="submit" value="Wyloguj się"/>
                         </form>
                     </li>
 
@@ -161,8 +161,8 @@
                                                 <td th:text = "${Modele.standartWyposazenia}">Standart Wyposazenia</td>
                                                 <td th:text = "${Modele.cena}">Cena</td>
                                                 <td th:text = "${Modele.dostepnosc}">Dostepnosc</td>
-                                                <td><a th:href="@{'/edit/'+ ${Modele.id_pojazdu}}">Edytuj</a></td>
-                                                <td><a th:href="@{'/deleteModele/' + ${Modele.id_pojazdu}}">Usuń</a></td>
+                                                <td><a th:href="@{'/edit/'+ ${Modele.id_pojazdu}}"><p class="text-info">Edytuj</p></a></td>
+                                                <td><a th:href="@{'/deleteModele/' + ${Modele.id_pojazdu}}"><p class="text-danger">Usuń</p></a></td>
                                             </tr>
                                             </tbody>
                                         </table>
