@@ -148,9 +148,9 @@ public class AppControler  implements WebMvcConfigurer {
     }
 
     @RequestMapping("/edit/{id_pojazdu}")
-    public ModelAndView showEditForm(@PathVariable(name = "id_pojazdu") int id_modelu){
+    public ModelAndView showEditForm(@PathVariable(name = "id_pojazdu") int id_pojazdu){
         ModelAndView mav = new ModelAndView("edit_form");
-        Modele modele = dao.get(id_modelu);
+        Modele modele = dao.get(id_pojazdu);
         mav.addObject("modele",modele);
         return mav;
     }

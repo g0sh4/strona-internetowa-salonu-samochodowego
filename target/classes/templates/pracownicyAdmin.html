@@ -167,8 +167,8 @@
                                                 <td th:text = "${Pracownik.wysokoscWynagrodzenia}">Wysokość wnagrodzenia</td>
                                                 <td th:text = "${Pracownik.miasto}">Miasto</td>
                                                 <td th:text = "${Pracownik.ulica}">Ulica</td>
-                                                <td><a th:href="@{'/editNieDziaua/'+ ${Pracownik.id_pracownik}}">Edytuj</a></td>
-                                                <td><a th:href="@{'/deletePracownik/' + ${Pracownik.id_pracownik}}">Usuń</a></td>
+                                                <td><a th:href="@{'/editNieDziaua/'+ ${Pracownik.id_pracownik}}"><p class="text-info">Edytuj</p></a></td>
+                                                <td><a th:href="@{'/deletePracownik/' + ${Pracownik.id_pracownik}}"><p class="text-danger">Usuń</p></a></td>
                                             </tr>
                                             </tbody>
                                         </table>

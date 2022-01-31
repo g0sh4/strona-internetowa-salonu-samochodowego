@@ -163,8 +163,8 @@
                                                 <td th:text = "${Firma.ulica}">Ulica</td>
                                                 <td th:text = "${Firma.nrTelefonu}">Nr telefonu</td>
                                                 <td th:text = "${Firma.email}">Email</td>
-                                                <td><a th:href="@{'/editNieDziaua/'+ ${Firma.id_klienta}}">Edytuj</a></td>
-                                                <td><a th:href="@{'/deleteFirma/' + ${Firma.id_klienta}}">Usuń</a></td>
+                                                <td><a th:href="@{'/editNieDziaua/'+ ${Firma.id_klienta}}"><p class="text-info">Edytuj</p></a></td>
+                                                <td><a th:href="@{'/deleteFirma/' + ${Firma.id_klienta}}"><p class="text-danger">Usuń</p></a></td>
                                             </tr>
                                             </tbody>
                                         </table>
